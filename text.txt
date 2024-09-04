@@ -1,0 +1,179 @@
+fsrfv
+fve
+v
+sv
+sz\
+fcs
+df
+sevs
+v
+import React from 'react';
+import {Metadata} from "next";
+
+
+sv
+sz\
+fcs
+df
+sevs
+v
+import React from 'react';
+import {Metadata} from "next";
+
+export const metadata:Metadata ={
+  title:'metadata'
+}
+type Props ={children:React.ReactNode};
+
+const   = ({children}:Props) => {
+  return(
+  <div>
+  {children}
+  </div>
+  )
+}
+
+expost default  ;vd
+fv
+ef
+s
+vf
+sfvzd
+rv
+efv
+saef
+se
+f
+v
+re
+sv
+sz\
+fcs
+df
+sevs
+v
+import React from 'react';
+import {Metadata} from "next";
+
+export const metadata:Metadata ={
+  title:'metadata'
+}
+type Props ={children:React.ReactNode};
+
+const   = ({children}:Props) => {
+  return(
+  <div>
+  {children}
+  </div>
+  )
+}
+
+expost default  ;vd
+fv
+ef
+s
+vf
+sfvzd
+rv
+efv
+saef
+se
+f
+v
+re
+sv
+sz\
+fcs
+df
+sevs
+v
+import React from 'react';
+import {Metadata} from "next";
+
+export const metadata:Metadata ={
+  title:'metadata'
+}
+type Props ={children:React.ReactNode};
+
+const   = ({children}:Props) => {
+  return(
+  <div>
+  {children}
+  </div>
+  )
+}
+
+expost default  ;vd
+fv
+ef
+s
+vf
+sfvzd
+rv
+efv
+saef
+se
+f
+v
+re
+sv
+sz\
+fcs
+df
+sevs
+v
+import React from 'react';
+import {Metadata} from "next";
+
+export const metadata:Metadata ={
+  title:'metadata'
+}
+type Props ={children:React.ReactNode};
+
+const   = ({children}:Props) => {
+  return(
+  <div>
+  {children}
+  </div>
+  )
+}
+
+expost default  ;vd
+fv
+ef
+s
+vf
+sfvzd
+rv
+efv
+saef
+se
+f
+v
+re
+export const metadata:Metadata ={
+  title:'metadata'
+}
+type Props ={children:React.ReactNode};
+
+const   = ({children}:Props) => {
+  return(
+  <div>
+  {children}
+  </div>
+  )
+}
+
+expost default  ;vd
+fv
+ef
+s
+vf
+sfvzd
+rv
+efv
+saef
+se
+f
+v
+re
