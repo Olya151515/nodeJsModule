@@ -1,23 +1,40 @@
-const fsPromises = require('node:fs/promises');
+const fs = require('node:fs/promises');
 const path = require('node:path')
-const fs = require('node:fs');
 
 
 const task = async () =>{
-    // await fsPromises.mkdir(path.join(__dirname,'baseFolder'));
-    for (let i = 1; i < 6; i++) {
-        await fsPromises.mkdir(path.join(__dirname,'baseFolder',`miniFolder${i}`,`test${i}.txt`),{recursive:true})
-        console.log(`path to folder miniFolder${i}   `+ path.dirname(path.join(__dirname,'baseFolder',`miniFolder${i}`)));
-        let stat1 = await fsPromises.stat(path.join(__dirname,'baseFolder',`miniFolder${i}`));
-        console.log('is Directory = '+stat1.isDirectory());
-        console.log('is File = '+stat1.isFile());
+    const pathToMainDir = path.join(__dirname,'baseFolder')
+    await fs.mkdir(pathToMainDir,{recursive:true});
 
-        console.log(`path to file test${i}  `+ path.dirname(path.join(__dirname,'baseFolder',`miniFolder${i}`,`test${i}.txt`)));
-        let stat2 = await fsPromises.stat(path.join(__dirname,'baseFolder',`miniFolder${i}`,`test${i}.txt`));
-        console.log('is Directory = '+stat2.isDirectory());
-        console.log('is File = '+stat2.isFile());
+    const folderNames = ['folder1','folder2','folder3','folder4','folder5'];
+    const fileNames = ['file1.txt','file2.txt','file3.txt','file4.txt','file5.txt'];
+
+    await Promise.all(folderNames.map(async (folder) =>{
+        const folderPath = path.join(pathToMainDir,folder);
+        await fs.mkdir(folderPath,{recursive:true});
+
+        await Promise.all(fileNames.map(async (file) =>{
+            const filePath = path.join(folderPath,file);
+            await fs.writeFile(filePath,"Hello world");
+        }))
+    }))
+
+
+    const data = await fs.readdir(pathToMainDir);
+    for (const folder of data) {
+        const folderPath = path.join(pathToMainDir,folder);
+        const stat = await fs.stat(folderPath);
+        console.log(`Folder ${folder} is directory : ${stat.isDirectory()}`);
+        console.log(`Folder ${folder} is file : ${stat.isFile()}`);
+
+        const files = await fs.readdir(folderPath);
+        for (const file of files) {
+            const filePath = path.join(folderPath,file);
+            const  stat = await fs.stat(filePath);
+            console.log(`File ${file} is directory :${stat.isDirectory()}`);
+            console.log(`File ${file} is file :${stat.isFile()}`);
+        }
     }
-
 }
 
 task();
